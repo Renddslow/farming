@@ -17,6 +17,7 @@ import makeInitialMap from './sprites/initialMap';
   const heroSheet = new Image(); // TODO: single sprite sheet
   const tileSheet = new Image();
   const gate = new Image();
+  const roof = new Image();
 
   const hero: Hero = {
     speed: 256,
@@ -58,9 +59,14 @@ import makeInitialMap from './sprites/initialMap';
     bg.gateReady = true;
   };
 
+  roof.onload = () => {
+    bg.roofReady = true;
+  };
+
   heroSheet.src = '/imgs/hero.png';
   tileSheet.src = '/imgs/tiles.png';
   gate.src = '/imgs/gate.png';
+  roof.src = '/imgs/roof.png';
 
   const keyCodes: Set<string> = new Set();
   window.addEventListener('keydown', (e) => {
@@ -108,6 +114,10 @@ import makeInitialMap from './sprites/initialMap';
 
     if (bg.gateReady) {
       ctx.drawImage(gate, 329, 516);
+    }
+
+    if (bg.roofReady) {
+      ctx.drawImage(roof, 124, 87);
     }
   };
 

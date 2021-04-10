@@ -26,4 +26,5 @@ export type Background = {
   ready: boolean;
   map: Tile[][];
   gateReady: boolean;
+  roofReady: boolean;
 };
